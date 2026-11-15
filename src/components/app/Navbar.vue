@@ -15,12 +15,13 @@ const menus = [
       {
         name: 'Event List',
         path: '/browse/events',
-        children: [{ name: 'Event Detail (Sample)', path: '/browse/events/1' }],
       },
       { name: 'Category', path: '/browse/category' },
+      { name: 'Your Events', path: '/browse/your-events' },
     ],
   },
   { name: 'Contact', path: '/contact' },
+  { name: 'Organizer Dashboard', path: '/dashboard' },
 ]
 
 const handleScroll = () => {
@@ -188,6 +189,7 @@ onUnmounted(() => {
   z-index: 999;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
 .navbar-container {
   display: flex;
   align-items: center;
@@ -204,6 +206,7 @@ onUnmounted(() => {
   -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
+
 .logo {
   display: flex;
   align-items: center;
@@ -238,6 +241,7 @@ onUnmounted(() => {
   flex: 1;
   justify-content: center;
 }
+
 .nav-item {
   position: relative;
   display: flex;
@@ -245,6 +249,7 @@ onUnmounted(() => {
   height: 100%;
   padding: 1rem 0; /* Memberi ruang hover */
 }
+
 .nav-link {
   display: flex;
   align-items: center;
@@ -257,6 +262,7 @@ onUnmounted(() => {
   border-radius: 10px;
   transition: all 0.3s ease;
 }
+
 .nav-link.active {
   background-color: var(--primary, #6644ff);
   font-weight: 600;
@@ -270,21 +276,24 @@ onUnmounted(() => {
   background-color: rgba(255, 255, 255, 0.1);
   transform: translateY(-2px);
 }
+
 .dropdown-indicator {
   transition: transform 0.3s ease;
 }
 .nav-item:hover .dropdown-indicator {
   transform: rotate(180deg);
 }
-/* ==================================
-DROPDOWN & SUBMENU STYLES
-Inspired by user reference image
-================================== */
+
+/* ==========================================
+   DROPDOWN & SUBMENU STYLES
+   Inspired by user reference image
+   ========================================== */
 .dropdown-menu {
   display: none; /* diubah jadi block saat hover */
   position: absolute;
   top: 100%;
   left: 0;
+
   background-color: #d8d8d8; /* warna abu seperti referensi */
   min-width: 200px;
   list-style: none;
@@ -293,14 +302,17 @@ Inspired by user reference image
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 }
+
 /* Tampilkan dropdown level 1 saat nav-item di-hover */
 .nav-item:hover .dropdown-menu {
   display: block;
   animation: fadeIn 0.2s ease-out;
 }
+
 .dropdown-item {
   position: relative; /* relative untuk submenu absolut */
 }
+
 .dropdown-link {
   display: flex;
   justify-content: space-between;
@@ -314,14 +326,17 @@ Inspired by user reference image
     color 0.2s;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
+
 .dropdown-link:hover {
   background-color: #c4c4c4; /* efek hover lebih gelap sedikit */
   color: #000;
 }
+
 /* Hilangkan border bawah pada item terakhir */
 .dropdown-item:last-child .dropdown-link {
   border-bottom: none;
 }
+
 /* Submenu (Level 2) */
 .submenu {
   display: none;
@@ -336,11 +351,13 @@ Inspired by user reference image
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 }
+
 /* Tampilkan submenu level 2 saat dropdown-item di-hover */
 .dropdown-item:hover .submenu {
   display: block;
   animation: fadeIn 0.2s ease-out;
 }
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -351,12 +368,14 @@ Inspired by user reference image
     transform: translateY(0);
   }
 }
+
 /* Submenu pada parent (jika left:100% terlalu mentok layar)
-Kita bisa membiarkannya default left 100%.
+   Kita bisa membiarkannya default left 100%.
 */
-/* ==================================
-RIGHT SECTION
-================================== */
+
+/* ==========================================
+   RIGHT SECTION
+   ========================================== */
 .nav-right {
   display: flex;
   align-items: center;
@@ -401,6 +420,7 @@ RIGHT SECTION
   background: rgba(255, 255, 255, 0.15);
   transform: scale(1.05);
 }
+
 @media (max-width: 900px) {
   .nav-menu {
     gap: 1rem;
