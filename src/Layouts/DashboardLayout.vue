@@ -3,21 +3,24 @@ import { RouterView, RouterLink } from 'vue-router'
 </script>
 
 <template>
-  <!-- RAIL & PANE SYSTEM
-       Kerangka khusus untuk kebutuhan produktivitas/pengelolaan aplikasi. -->
-  
-       <div class="dashboard-layout">
+  <!-- RAIL & PANE SYSTEM -->
+  <!-- Kerangka khusus untuk kebutuhan produktivitas/pengelolaan aplikasi. -->
+  <div class="dashboard-layout">
     <!-- RAIL: Navigasi samping yang posisinya terkunci (fixed) -->
     <aside class="dashboard-rail">
       <div class="rail-brand">
         <router-link to="/">Gatherly Organizer</router-link>
       </div>
+
       <nav class="rail-nav">
-        <router-link to="/dashboard" class="rail-link active">Overview</router-link>
-        <a href="#" class="rail-link">My Events</a>
-        <a href="#" class="rail-link">Attendees</a>
-        <a href="#" class="rail-link">QR Check-in</a>
+        <router-link to="/dashboard" class="rail-link" exact-active-class="active"
+          >Dashboard</router-link
+        >
+        <router-link to="/dashboard/events" class="rail-link" active-class="active"
+          >Event Management</router-link
+        >
       </nav>
+
       <div class="rail-footer">
         <router-link to="/" class="rail-link">&larr; Back to Public</router-link>
       </div>
@@ -29,17 +32,17 @@ import { RouterView, RouterLink } from 'vue-router'
         <h1>Dashboard</h1>
         <div class="user-profile">Admin</div>
       </header>
+
       <div class="pane-content">
         <RouterView />
       </div>
     </main>
-  
   </div>
 </template>
 
 <style scoped>
 /*
-  Full-screen app layout (khas dashboard).
+  Full-screen app Layout (khas dashboard).
   Tinggi dibatasi 100vh agar bagian rail tidak ikut terguyur ke atas saat pane di-scroll.
 */
 .dashboard-layout {

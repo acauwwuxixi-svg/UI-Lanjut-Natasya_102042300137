@@ -92,7 +92,6 @@ import AppCard from '@/components/ui/AppCard.vue'
   max-width: 600px;
 }
 
-
 .features-section {
   padding: 0 0 var(--space-12) 0;
 }
@@ -120,11 +119,9 @@ import AppCard from '@/components/ui/AppCard.vue'
 }
 
 .feature-card {
-
   padding: var(--space-8);
 
   text-align: center;
-  
 }
 
 .feature-icon {
