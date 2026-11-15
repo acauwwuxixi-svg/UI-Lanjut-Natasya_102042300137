@@ -49,11 +49,7 @@
 
           <div class="form-group">
             <label>Message</label>
-            <textarea
-              placeholder="How can we help you?"
-              rows="5"
-              class="form-control"
-            ></textarea>
+            <textarea placeholder="How can we help you?" rows="5" class="form-control"></textarea>
           </div>
 
           <button class="btn-submit">Send Message</button>
